@@ -12,6 +12,7 @@ class MainWidget(QWidget):
 
         #create symbols that can be used
         self.symbols = list(string.ascii_lowercase)
+        self.symbols.append(" ")
         #self.symbols = ['a', "b", "c", "d", "e"]
         self.symbol_widgets = []
 

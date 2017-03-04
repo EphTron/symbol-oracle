@@ -76,7 +76,7 @@ class TranslationDialog(QtGui.QDialog):
         return False
 
     def saveImage(self, filename, fileformat):
-        if visibleImage.save(filename, fileformat):
+        if self.symbol_image.save(filename, fileformat):
             return True
         else:
             return False

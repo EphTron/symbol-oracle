@@ -23,7 +23,10 @@ class SymbolWidget(QtGui.QWidget):
         self.layout.addWidget(self.label)
 
         self.image_label = QLabel()
-        self.pixmap = QPixmap('symbols/' + self.symbol + '.png')
+        if self.symbol == " ":
+            self.pixmap = QPixmap('symbols/' + "space" + '.png')
+        else:
+            self.pixmap = QPixmap('symbols/' + self.symbol + '.png')
         self.image_label.setPixmap(self.pixmap)
         self.layout.addWidget(self.image_label)
 
@@ -42,5 +45,8 @@ class SymbolWidget(QtGui.QWidget):
 
     def update_symbol(self):
         print("new image foo")
-        self.pixmap = QPixmap('symbols/' + self.symbol + '.png')
+        if self.symbol == " ":
+            self.pixmap = QPixmap('symbols/' + "space" + '.png')
+        else:
+            self.pixmap = QPixmap('symbols/' + self.symbol + '.png')
         self.image_label.setPixmap(self.pixmap)

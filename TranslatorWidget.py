@@ -39,8 +39,13 @@ class TranslatorWidget(QWidget):
             symbol_count += 1
             if sym in self.symbols:
                 loaded_image = QImage()
-                if not loaded_image.load('symbols/' + sym + '.png'):
-                    print("ERROR LOADING")
+                if sym == " ":
+                    if not loaded_image.load('symbols/' + "space" + '.png'):
+                        print("ERROR LOADING")
+
+                else:
+                    if not loaded_image.load('symbols/' + sym + '.png'):
+                        print("ERROR LOADING")
 
                 #w = loaded_image.width()
                 #output_image_width += w
@@ -62,7 +67,7 @@ class TranslatorWidget(QWidget):
             painter.drawImage(QPoint(current_x_pos, current_y_pos),img)
             print("idx", idx)
             current_x_pos += img.width()
-            if idx != 0 and idx % 10 == 0:
+            if idx != 0 and idx % 9 == 0:
                 current_y_pos += 100
                 current_x_pos = 0
         print("DONE")
